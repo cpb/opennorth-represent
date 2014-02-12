@@ -19,7 +19,7 @@ describe Opennorth::Represent::PostalCodes, type: :collection do
       expect(subject.province).to eql("BC")
     end
 
-    it "should ahve a city" do
+    it "should have a city" do
       expect(subject.city).to eql("Vancouver")
     end
   end
