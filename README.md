@@ -18,7 +18,26 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'opennorth/represent'
+
+service = Opennorth::Represent.new
+
+postal_code = service.postal_codes.get("V6H2V4") # or your own postal code
+
+member_of_parliament = postal_code.representatives.where(elected_office: "MP").first
+hill_office = member_of_parliament.offices.where(type: "legislature").first
+
+puts "To: #{member_of_parliament.honorific_prefix} #{member_of_parliament.name}"
+puts "#{hill_office.postal}"
+puts
+puts "Dear, #{member_of_parliament.name}"
+puts
+puts "My message goes here"
+puts
+puts "Yours truly,"
+puts "A constituent"
+```
 
 ## Contributing
 
