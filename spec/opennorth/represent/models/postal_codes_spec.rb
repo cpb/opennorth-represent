@@ -22,5 +22,9 @@ describe Opennorth::Represent::PostalCodes, type: :collection do
     it "should have a city" do
       expect(subject.city).to eql("Vancouver")
     end
+
+    it "should have representatives" do
+      expect(subject.representatives).to have(13).items
+    end
   end
 end
