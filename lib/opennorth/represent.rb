@@ -10,6 +10,10 @@ module Opennorth
     request_path "opennorth/represent/requests"
     request :get_postal_code
 
+    model_path 'opennorth/represent/models'
+    collection :postal_codes
+    model :postal_code
+
     class Real
       def initialize(options={})
         @connection = Fog::Connection.new(BASE_URL,false,connection_options)
