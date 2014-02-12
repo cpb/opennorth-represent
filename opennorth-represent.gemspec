@@ -7,8 +7,8 @@ Gem::Specification.new do |spec|
   spec.version       = File.read(File.join(File.dirname(__FILE__),"VERSION"))
   spec.authors       = ["Caleb Buxton"]
   spec.email         = ["me@cpb.ca"]
-  spec.description   = %q{Ruby Client to represent.opennorth.ca's api}
-  spec.summary       = %q{Ruby Client to represent.opennorth.ca's api}
+  spec.description   = %q{Ruby Client to represent.opennorth.ca's API}
+  spec.summary       = %q{Ruby Client to represent.opennorth.ca's API}
   spec.homepage      = ""
   spec.license       = "MIT"
 

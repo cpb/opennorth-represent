@@ -1,6 +1,6 @@
 # Opennorth::Represent
 
-TODO: Write a gem description
+Ruby Client for [represent.opennorth.ca's](http://represent.opennorth.ca) API.
 
 ## Installation
 
