@@ -11,6 +11,8 @@ module Opennorth
 
       attribute :offices,        type: :array
 
+      attribute :extra
+
       def validate!
         requires :name, :district_name, :elected_office, :source_url
       end
@@ -22,6 +24,14 @@ module Opennorth
       def offices=(new_offices)
         self.offices.clear
         self.offices.load(new_offices)
+      end
+
+      def honorific_prefix
+        self.extra["honorific_prefix"]
+      end
+
+      def preferred_language
+        self.extra["preferred_language"]
       end
     end
   end

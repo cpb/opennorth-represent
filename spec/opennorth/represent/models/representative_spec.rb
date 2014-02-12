@@ -26,7 +26,11 @@ describe Opennorth::Represent::Representative, type: :model do
         "postal" => "1600 - 90th Avenue SW, Suite A-203\nCalgary AB  T2V 5A8",
         "tel" => "1-403-253-7990"
       }
-    ]
+    ],
+    "extra" => {
+      "honorific_prefix" => "Right Hon.",
+      "preferred_language" => "English"
+    }
   }}
 
   describe "optionally" do
@@ -45,8 +49,6 @@ describe Opennorth::Represent::Representative, type: :model do
 
       expect(described_class.new(model_options.reject {|k,_| k == 'offices'}).offices).to be_empty
     end
-
-    it "may have extra"
   end
 
   describe "#offices" do
@@ -55,6 +57,18 @@ describe Opennorth::Represent::Representative, type: :model do
 
     it "should be composed of Offices" do
       expect(subject).to be_composed_of(Opennorth::Represent::Office)
+    end
+  end
+
+  describe "#honorific_prefix" do
+    it "should be retrieved from the extra" do
+      expect(record.honorific_prefix).to eql("Right Hon.")
+    end
+  end
+
+  describe "#preferred_language" do
+    it "should be retrieved from the extra" do
+      expect(record.preferred_language).to eql("English")
     end
   end
 end
