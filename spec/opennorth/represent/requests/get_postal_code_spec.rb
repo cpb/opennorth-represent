@@ -10,7 +10,15 @@ describe Opennorth::Represent, "#get_postal_code", type: :request  do
     end
 
     it "should be formatted as a postal code response" do
-      expect(subject.body).to be_formatted_like(POSTAL_CODE_RESPONSE)
+      expect(subject.body).to be_formatted_like({
+        "province" => String,
+        "city" => String,
+        "boundaries_centroid" => Array,
+        "code" => String,
+        "centroid" => Hash,
+        "representatives_centroid" => Array,
+        "boundaries_concordance" => Array
+      })
     end
   end
 end
