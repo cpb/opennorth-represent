@@ -5,7 +5,7 @@ module Opennorth
     # Your code goes here...
     VERSION = File.read(File.join(File.dirname(__FILE__),"..","..","VERSION"))
 
-    BASE_URL = "http://represent.opennorth.ca".freeze
+    BASE_URL = "https://represent.opennorth.ca".freeze
 
     request_path "opennorth/represent/requests"
     request :get_postal_code
